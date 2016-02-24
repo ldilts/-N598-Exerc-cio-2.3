@@ -2,7 +2,8 @@
 Atividade 2.3
 Lucas Dilts
 
-2.3.1. Descubra quais são as subclasses de InputStream disponíveis no pacote java.io que suportam o mecanismo de marcação (markSupported() retorna verdadeiro).
+2.3.1. Descubra quais são as subclasses de InputStream disponíveis no pacote java.io que suportam o mecanismo de 
+marcação (markSupported() retorna verdadeiro).
 
 - BufferedInputStream;
 - ByteArrayInputStream;
@@ -18,10 +19,18 @@ Lucas Dilts
 - SequenceInputStream (herdado da class java.io.InputStream);
 - StringBufferInputStream (herdado da class java.io.InputStream);
 
-2.3.2. Baseado na resposta do item anterior, discuta até que ponto incluir métodos relativos ao mecanismo de marcação na classe abstrata adere às boas práticas do paradigma de orientação a objeto.
+2.3.2. Baseado na resposta do item anterior, discuta até que ponto incluir métodos relativos ao mecanismo de marcação 
+na classe abstrata adere às boas práticas do paradigma de orientação a objeto.
 
-Em geral, a minoria dos streams dão suporte para a funcionalidade “mark”. Adicionar uma funcionalidade que não é usado por muitos à uma superclasse abstrata não é uma boa prática. Seria melhor incluir esta funcionalidade em uma interface separada, para ser implementado pelas classes que dão suporte ao mark. O uso do método markSupported() é usado para verificar a existência da funcionalidade em runtime, porém não é uma solução orientado-a-objetos. Para aderir às boas práticas do paradigma de orientação a objetos, poderíamos inserir esta funcionalidade no type system através de interfaces e classes, para realizarmos a verificação no compile time (HAROLD, 2013). 
+Em geral, a minoria dos streams dão suporte para a funcionalidade “mark”. Adicionar uma funcionalidade que não é usado 
+por muitos à uma superclasse abstrata não é uma boa prática. Seria melhor incluir esta funcionalidade em uma interface 
+separada, para ser implementado pelas classes que dão suporte ao mark. O uso do método markSupported() é usado para 
+verificar a existência da funcionalidade em runtime, porém não é uma solução orientado-a-objetos. Para aderir às boas 
+práticas do paradigma de orientação a objetos, poderíamos inserir esta funcionalidade no type system através de 
+interfaces e classes, para realizarmos a verificação no compile time (HAROLD, 2013). 
 
 Referências:
-[1] ORACLE. Package java.io. [s.d.]. Disponível em: <https://docs.oracle.com/javase/7/docs/api/java/io/package-summary.html>. Acesso em: 24 fev. 2016.
-[2] HAROLD, Elliotte Rusty. Java Network Programming. 4. ed. Sebastopol, California: O'reilly Media, Inc., 2013. 506 p. (página 35)
+[1] ORACLE. Package java.io. [s.d.]. Disponível em: <https://docs.oracle.com/javase/7/docs/api/java/io/package-summary.html>. 
+Acesso em: 24 fev. 2016.
+[2] HAROLD, Elliotte Rusty. Java Network Programming. 4. ed. Sebastopol, California: O'reilly Media, Inc., 2013. 506 p. 
+(página 35)
